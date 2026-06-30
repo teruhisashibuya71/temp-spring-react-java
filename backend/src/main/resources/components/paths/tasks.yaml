@@ -1,0 +1,180 @@
+testWhenSentence:
+  get:
+    operationId: testWhenSentence
+    summary: when句のテスト
+    description: すべてのタスクを取得します
+    tags:
+      - Tasks
+      #- TestLists
+    responses:
+      '200':
+        description: 成功
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../schemas/Task.yaml'
+
+
+getTasks:
+  get:
+    operationId: listTasks
+    summary: タスク一覧取得
+    description: すべてのタスクを取得します
+    tags:
+      - Tasks
+    responses:
+      '200':
+        description: 成功
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../schemas/Task.yaml'
+  post:
+    operationId: createTask
+    summary: タスク作成
+    description: 新しいタスクを作成します
+    tags:
+      - Tasks
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/TaskCreateRequest.yaml'
+    responses:
+      '201':
+        description: 作成成功
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/Task.yaml'
+      '400':
+        description: バリデーションエラー
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
+
+getTasksByStatus:
+  get:
+    operationId: filterTasksByStatus
+    summary: タスクステータスでフィルタリング
+    description: 指定されたステータスのタスクを取得します
+    tags:
+      - Tasks
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/TaskStatusFilterRequest.yaml'
+    responses:
+      '200':
+        description: 成功
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '../schemas/Task.yaml'
+      '400':
+        description: バリデーションエラー
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
+
+getTaskById:
+  get:
+    operationId: getTask
+    summary: タスク詳細取得
+    description: 指定されたIDのタスクを取得します
+    tags:
+      - Tasks
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+        description: タスクID
+    responses:
+      '200':
+        description: 成功
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/Task.yaml'
+      '404':
+        description: タスクが見つかりません
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
+  put:
+    operationId: updateTask
+    summary: タスク更新
+    description: 指定されたIDのタスクを更新します
+    tags:
+      - Tasks
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+        description: タスクID
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/TaskUpdateRequest.yaml'
+    responses:
+      '200':
+        description: 更新成功
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/Task.yaml'
+      '404':
+        description: タスクが見つかりません
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
+      '400':
+        description: バリデーションエラー
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
+  delete:
+    operationId: deleteTask
+    summary: タスク削除
+    description: 指定されたIDのタスクを削除します
+    tags:
+      - Tasks
+    parameters:
+      - name: task_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+        description: タスクID
+    responses:
+      '204':
+        description: 削除成功
+      '404':
+        description: タスクが見つかりません
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'

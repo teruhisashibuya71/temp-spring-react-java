@@ -1,0 +1,11 @@
+type: object
+properties:
+  status:
+    type: string
+    enum:
+      - TODO
+      - IN_PROGRESS
+      - DONE
+    description: フィルタリングするステータス
+required:
+  - status

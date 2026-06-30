@@ -1,0 +1,18 @@
+type: object
+properties:
+  title:
+    type: string
+    maxLength: 255
+    description: タスクタイトル
+  description:
+    type: string
+    nullable: true
+    description: タスク説明
+  status:
+    type: string
+    enum:
+      - TODO
+      - IN_PROGRESS
+      - DONE
+    description: ステータス
+required: []

@@ -1,0 +1,10 @@
+type: object
+properties:
+  message:
+    type: string
+    description: エラーメッセージ
+  code:
+    type: string
+    description: エラーコード
+required:
+  - message

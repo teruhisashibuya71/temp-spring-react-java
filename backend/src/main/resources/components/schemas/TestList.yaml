@@ -1,0 +1,10 @@
+type: object
+properties:
+  title:
+    type: string
+    maxLength: 255
+    description: タスクタイトル
+  description:
+    type: string
+    nullable: true
+    description: タスク説明

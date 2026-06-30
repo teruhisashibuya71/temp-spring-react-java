@@ -1,0 +1,19 @@
+openapi: 3.0.8
+info:
+  title: Mini CRUD Test API
+  version: 1.0.0
+  description: タスク管理API
+servers:
+  - url: http://localhost:8080
+    description: ローカル開発サーバー
+
+paths:
+  /api/tasks:
+    $ref: './components/paths/tasks.yaml#/getTasks'
+  /api/tasks/status:
+    $ref: './components/paths/tasks.yaml#/getTasksByStatus'
+  /api/tasks/{task_id}:
+    $ref: './components/paths/tasks.yaml#/getTaskById'
+
+  /api/tests/whenSentence:
+    $ref: './components/paths/tasks.yaml#/testWhenSentence'

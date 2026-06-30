@@ -1,0 +1,21 @@
+getUsersCsv:
+  get:
+    operationId: getUsersCsv
+    summary: ユーザCSV出力
+    description: ユーザ一覧をCSV形式で出力します
+    tags:
+      - Users
+    responses:
+      '200':
+        description: 成功（CSVファイル）
+        content:
+          text/csv:
+            schema:
+              type: string
+              format: binary
+      '500':
+        description: サーバーエラー
+        content:
+          application/json:
+            schema:
+              $ref: '../schemas/ErrorResponse.yaml'
