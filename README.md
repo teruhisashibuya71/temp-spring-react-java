@@ -8,7 +8,7 @@ Java + TypeScript + OpenAPI のモノレポ雛形。
 ```
 temp-spring-react-java/
 ├── backend/          # Java + Spring Boot（ポート 8080）
-├── frontend/         # React + TypeScript + Vite（ポート 3000）
+├── frontend/         # React + TypeScript + React Router v7 SSR（ポート 3000）
 ├── project_docs/     # ドキュメント
 └── scripts/          # 共通スクリプト
 ```
@@ -27,7 +27,7 @@ cd frontend && npm install && npm run dev
 ```
 
 - BE: http://localhost:8080
-- FE: http://localhost:3000
+- FE: http://localhost:3000/tasks
 - API 例: http://localhost:8080/api/tasks
 
 ## ドキュメント
@@ -41,5 +41,5 @@ cd frontend && npm install && npm run dev
 | 層 | 技術 |
 |----|------|
 | BE | Java 21, Spring Boot 3.5, Gradle Groovy, OpenAPI Generator (`spring`) |
-| FE | React, TypeScript, Vite, OpenAPI Generator (`typescript-fetch`) |
+| FE | React, TypeScript, React Router v7（SSR）, OpenAPI Generator (`typescript-fetch`) |
 | API 仕様 | `backend/src/main/resources/openapi.yaml`（Single Source of Truth） |
