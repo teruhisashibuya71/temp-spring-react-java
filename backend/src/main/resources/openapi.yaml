@@ -8,6 +8,10 @@ servers:
     description: ローカル開発サーバー
 
 paths:
+  # テスト用
+  /api/testTodos:
+    $ref: './components/paths/testTodos.yaml#/getTestTodos'
+  
   /api/tasks:
     $ref: './components/paths/tasks.yaml#/getTasks'
   /api/tasks/status:

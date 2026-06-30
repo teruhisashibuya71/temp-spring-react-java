@@ -1,4 +1,4 @@
-package com.example.usecase.task;
+package com.example.mapper;
 
 import com.example.domain.Task;
 import com.example.domain.TaskStatus;
@@ -7,7 +7,6 @@ import com.example.generated.model.TaskStatusFilterRequest;
 import com.example.generated.model.TaskUpdateRequest;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
 public final class TaskMapper {

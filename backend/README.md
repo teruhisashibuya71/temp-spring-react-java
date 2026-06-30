@@ -3,8 +3,19 @@
 ## 概要
 
 - Java 21 / Spring Boot 3.5.8 / Gradle Groovy
+- Spring Data JPA（Hibernate）+ H2（`ddl-auto: update` で Task / TestTodo を管理）
 - OpenAPI YAML から API インターフェース・モデルを自動生成
 - 設定ファイル: `src/main/resources/application.yaml`（ポート **8080**）
+
+## アーキテクチャ
+
+```
+controller/  →  service/  →  repository/  →  domain/ (JPA Entity)
+     ↓
+  mapper/    Domain ↔ OpenAPI 生成モデル変換
+```
+
+- `users` / `user_subsidies` テーブルは `schema.sql` + `data.sql` で管理（JPA Entity なし）
 
 ## よく使うコマンド
 

@@ -1,4 +1,4 @@
-INSERT INTO "tasks" ("title", "description", "status", "created_at", "updated_at") VALUES
+INSERT INTO tasks (title, description, status, created_at, updated_at) VALUES
 ('タスク1', 'これは最初のタスクです。サンプルデータとして追加されました。', 'TODO', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('タスク2', '進行中のタスクのサンプルです。', 'IN_PROGRESS', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('タスク3', '完了したタスクのサンプルです。', 'DONE', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
@@ -21,3 +21,8 @@ INSERT INTO "user_subsidies" ("user_id", "document_status") VALUES
 (1, 'pending'),
 (2, 'verified'),
 (3, 'submitted');
+
+INSERT INTO test_todos (title, description) VALUES
+('test1', 'test1'),
+('test2', 'test2'),
+('test3', 'test3');

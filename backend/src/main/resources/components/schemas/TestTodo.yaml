@@ -1,0 +1,11 @@
+# テスト用の配列モデル
+type: object
+properties:
+  title:
+    type: string
+    maxLength: 255
+    description: todoのタイトル
+  description:
+    type: string
+    nullable: true
+    description: todoの説明

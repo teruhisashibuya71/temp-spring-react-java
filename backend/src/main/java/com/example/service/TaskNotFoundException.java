@@ -1,4 +1,4 @@
-package com.example.usecase.task;
+package com.example.service;
 
 public class TaskNotFoundException extends RuntimeException {
 
