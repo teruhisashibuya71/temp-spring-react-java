@@ -7,5 +7,5 @@ properties:
     description: todoのタイトル
   description:
     type: string
-    nullable: true
+    #nullable: true
     description: todoの説明

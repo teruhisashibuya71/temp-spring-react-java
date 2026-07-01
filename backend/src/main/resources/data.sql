@@ -22,7 +22,8 @@ INSERT INTO "user_subsidies" ("user_id", "document_status") VALUES
 (2, 'verified'),
 (3, 'submitted');
 
+-- テスト用テーブルデータ
 INSERT INTO test_todos (title, description) VALUES
-('test1', 'test1'),
+('test1', null),
 ('test2', 'test2'),
 ('test3', 'test3');

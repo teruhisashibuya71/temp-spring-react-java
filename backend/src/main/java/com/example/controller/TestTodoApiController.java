@@ -19,11 +19,25 @@ public class TestTodoApiController implements TestTodosApi {
         this.testTodoService = testTodoService;
     }
 
+    /**
+     * テスト用PI 
+     * todoリストを取得する
+     * 
+     * テスト用URL
+     * http://localhost:8080/api/testTodos
+     */
     @Override
     public ResponseEntity<List<TestTodo>> getTestTodoList() {
+        
+        // mapメソッドはstreamクラスのメソッドのため、 .stream() でstreamオブジェクトを作成してからmapメソッドを呼び出す
         List<TestTodo> testTodoList = testTodoService.getTestTodoList().stream()
             .map(TestTodoMapper::toApiTestTodo)
-            .toList();
+            .toList(); // ここだけjava16からの新しいAPI
+
+        // 以下のラムダ式と同じ
+        // .map(domainTestTodo -> TestTodoMapper.toApiTestTodo(domainTestTodo))
+        // static メソッドを1つ渡す時の省略記法
+        
         return ResponseEntity.ok(testTodoList);
     }
 }

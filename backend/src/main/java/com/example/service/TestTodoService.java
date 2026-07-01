@@ -1,10 +1,11 @@
 package com.example.service;
 
-import com.example.domain.TestTodo;
-import com.example.repository.TestTodoRepository;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.example.domain.TestTodo;
+import com.example.repository.TestTodoRepository;
 
 @Service
 public class TestTodoService {
@@ -15,6 +16,11 @@ public class TestTodoService {
         this.testTodoRepository = testTodoRepository;
     }
 
+    /**
+     * テスト用モデルである todoリストを取得する
+     * 
+     * @return List<TestTodo> テスト用モデルである todoリスト
+     */
     public List<TestTodo> getTestTodoList() {
         return testTodoRepository.findAll();
     }
