@@ -40,6 +40,6 @@ cd frontend && npm install && npm run dev
 
 | 層 | 技術 |
 |----|------|
-| BE | Java 21, Spring Boot 3.5, Gradle Groovy, OpenAPI Generator (`spring`) |
+| BE | Java 21, Spring Boot 3.5, Spring Data JPA (Hibernate), Gradle Groovy, OpenAPI Generator (`spring`) |
 | FE | React, TypeScript, React Router v7（SSR）, OpenAPI Generator (`typescript-fetch`) |
 | API 仕様 | `backend/src/main/resources/openapi.yaml`（Single Source of Truth） |
